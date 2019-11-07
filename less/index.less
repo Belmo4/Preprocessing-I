@@ -47,13 +47,234 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One|Ubuntu+Mono&display=swap');
 /* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+@fireBrick: #8B0000;
+@white: white;
+@body-font: 'Ubuntu Mono', monospace;'
+
+.bgDecorate(@color) {
+	background-color: @color;
 }
 
-html, body {
-    height: 100%;
+.headerDecorate(@top, @right, @bottom, @left) {
+	text-decoration: none;
+	color: @white;
+	font-size: 2rem;
+	font-weight: bold;
+	.bgDecorate(@fireBrick);
+	margin-bottom: 7px;
+	padding: @top @right @bottom @left;
 }
+* {
+	box-sizing: border-box;
+
+}
+html{
+	font-size: 62.5%
+}
+html, body {
+	height: 100%;
+	font-family: @body-font;
+}
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+  }
+  
+  .container {
+
+  
+	  nav {
+			display: flex;
+			justify-content: flex-end;
+			flex-wrap: no-wrap;
+		    .bgDecorate(@fireBrick);
+		 	 padding: 20px 0px;
+		  	width: 100%;
+		  @media (max-width: 500px) {
+			  flex-direction: column;
+			  justify-content: center;
+		  }
+  
+		  a{
+			  margin-left: 20px;
+			  margin-right: 10px;
+			  text-decoration: none;
+			  color: lightgray;
+			  font-size: 2rem;
+			  @media (max-width: 500px) {
+				  display:flex;
+				  justify-content: center;
+				  padding: 10px 0px;
+				  border-top: 1px solid lightgray;
+				  border-bottom: 1px solid lightgray;
+				  margin: 0px;
+			  }
+		  }
+  
+  
+	  }
+  
+	  header {
+		  display: flex;
+		  justify-content: space-evenly;
+		  flex-wrap: wrap;
+		  margin: 2% 2%;
+		  padding: 2% 2%;
+		  border-radius: 10px;
+		  .bgDecorate(@white);
+  
+		  .name {
+			  display: flex;
+			  justify-content: center;
+			  flex-wrap: no-wrap;
+			  align-items: center;
+			  flex-direction: column;
+  
+			  h1 {
+				  text-decoration: underline;
+				  color: black;
+	 			  font-size: 4rem;
+				  font-weight: bold;
+				  margin-bottom: 15px;
+  
+				  @media (max-width: 500px) {
+					  display: flex;
+					  align-text: center;
+				  }
+			  }
+  
+			  p {				
+				  color: black;
+				  font-size: 2rem;
+				  font-weight: @weight;	
+				  margin-bottom: 50px;			
+			  }
+  
+			  button {
+				  .bgDecorate(white);
+				  border: 1px solid black;
+				  padding: 10px 15px;
+				  border-radius: 10px;
+  
+			  }
+		  }
+  
+		  .profile {
+			  @media (max-width:500px) {
+				  width: 100%;
+			  }
+			  
+		  }
+	  }
+	  .fit-skills {
+		  display: flex;
+		  justify-content: space-between;
+		  flex-wrap: wrap;
+		  margin: 2% 2%;
+		  @media (max-width: 500px) {
+			  display: no-flex;
+	  }
+  
+  
+		  .intro {
+			  
+			  padding: 2% 2%;
+			  width: 48%;
+			  .bgDecorate(@white);
+			  
+			  @media (max-width: 500px) {
+					  width: 100%;
+			  }
+  
+			  h2 {
+				  .headerDecorate(10%, 10%, 2%, 2%);
+			  }
+  
+			  p {
+				  margin: 2% 2%;
+				  line-height: 15px;
+					font-size: 2rem;
+	
+  
+			  }
+  
+  
+		  }
+  
+		  .skills {
+			  padding: 2% 2%;
+			  width: 48%;
+			  height: 90%;
+			  .bgDecorate(@white);
+  
+			  @media (max-width: 500px) {
+				  width: 100%;
+				  margin-top: 5%;
+			  }
+  
+			  h3 {
+				  .headerDecorate(10%, 10%, 2%, 2%);
+			  }
+  
+			  p {
+				  padding: 10px 0px;
+				  border-bottom: 1px solid gray;
+				  border-top: 1px solid gray;
+				  @media (max-width: 500px) {
+					  margin: 2% 2%;
+				  }
+			  }
+  
+		  }
+	  }
+  
+	  .workhistory {
+		  margin: 2% 2%;
+		  padding: 2% 2%;
+		  .bgDecorate(white);
+		  display: flex;
+		  justify-content: center;
+		  flex-wrap: wrap;
+		  h4 {
+			  width: 100%;
+			  .headerDecorate(2%, 2%, 2%, 2%);
+			  color: @white;
+			  font-size: 2rem;
+			  font-weight: bold;
+		  }
+  
+		  table tr:nth-child(even) td{
+			  background: lightgray;
+		   }
+  
+		  table {
+			  margin: 1% 2%;
+  
+			  th{
+				  text-align: left;
+				  color: @black;
+				  font-size: 2rem;
+				  font-weight: bold;
+			  }
+  
+			  th, td {
+				  padding: 8px 5px;
+			  }	
+		  }
+	  }
+  
+	  footer {
+		  margin: 4% 2%;
+		  display: flex;
+		  justify-content: center;
+		  flex-wrap: wrap;
+		  .bgDecorate(@fireBrick);
+		  .headerDecorate(5%, 0, 2%, 0);
+		  color: @white;
+		  font-size: 1rem;
+	  }
+  
+  }
 
